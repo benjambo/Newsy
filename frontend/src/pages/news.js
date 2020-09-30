@@ -1,79 +1,167 @@
-import React, { useEffect, useState } from 'react'
-import news from '../assets/news.jpg'
+import React from 'react'
+import { getArticles } from '../api/api'
+import ArticleList from '../components/ArticleList'
+import SearchBar from '../components/SearchBar'
+import { Container, Header } from 'semantic-ui-react'
 
-const api = {
-  key: '1147083ab9a3466d9332ac26b5a5c2d0',
-  base: 'https://api.openweathermap.org/data/2.5/',
+class News extends React.Component {
+  state = {
+    articles: [],
+    searchTopic: "",
+    totalResults: "",
+    loading: false,
+    apiError: "",
+  };
+
+  searchForTopic = async (topic) => {
+    try {
+      this.setState({ loading: true });
+      const response = await getArticles(topic);
+      this.setState({
+        articles: response.articles,
+        searchTopic: topic,
+        totalResults: response.totalResults,
+      });
+    } catch (error) {
+      this.setState({ apiError: "Could not find any articles" });
+    }
+    this.setState({ loading: false });
+  };
+
+  render() {
+    const {
+      articles,
+      apiError,
+      loading,
+      searchTopic,
+      totalResults,
+    } = this.state;
+    return (
+      <Container className="pages">
+        <Header as="h2" style={{ textAlign: "center", margin: 20 }}>
+          Search for a topic
+        </Header>
+        <SearchBar searchForTopic={this.searchForTopic} />
+        <p style={{ textAlign: "center" }}>
+          Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
+        </p>
+        {loading && (
+          <p style={{ textAlign: "center" }}>Searching for articles...</p>
+        )}
+        {articles.length > 0 && (
+          <Header as="h4" style={{ textAlign: "center", margin: 20 }}>
+            Found {totalResults} articles on "{searchTopic}"
+          </Header>
+        )}
+        {articles.length > 0 && <ArticleList articles={articles} />}
+        {apiError && <p>Could not fetch any articles. Please try again.</p>}
+      </Container>
+    );
+  }
 }
+
+
+export default News
+
+/*import React, { useState, useEffect } from 'react'
+//import ArticleList from '../components/ArticleList'
+//import SearchBar from '../components/SearchBar'
+import { Container, Header, Button, Form, Grid, Image, List } from 'semantic-ui-react'
+import { NEWS_API_KEY } from '../config'
 
 export const News = () => {
-    const [news, setNews] = useState([])
-    const [newFilter, setNewFilter] = useState('')
+  const [articles, setArticles] = useState([])
+  const [apiError, setapiError] = useState('')
+  const [searchNews, setSearchNews] = useState('')
+  const [totalResults, setTotalResults] = useState('')
+  const [loading, setLoading] = useState(false)
 
-     useEffect(() => {
-       fetch('https://api.citybik.es/v2/networks/citybikes-helsinki')
-         .then((res) => res.json())
-         .then((res) => setNews(res.network.stations))
-     }, [])
-
-    const NewsAPI = require('newsapi');
-    const newsapi = new NewsAPI('1147083ab9a3466d9332ac26b5a5c2d0');
-    // To query /v2/top-headlines
-    // All options passed to topHeadlines are optional, but you need to include at least one of them
-    newsapi.v2.topHeadlines({
-        sources: 'bbc-news,the-verge',
-        q: 'bitcoin',
-        category: 'business',
-        language: 'en',
-        country: 'us'
-    }).then(response => {
-        console.log(response);
-        /*
-          {
-            status: "ok",
-            articles: [...]
-          }
-        */
-    });
-    // To query /v2/everything
-    // You must include at least one q, source, or domain
-    newsapi.v2.everything({
-        q: 'bitcoin',
-        sources: 'bbc-news,the-verge',
-        domains: 'bbc.co.uk, techcrunch.com',
-        from: '2017-12-01',
-        to: '2017-12-12',
-        language: 'en',
-        sortBy: 'relevancy',
-        page: 2
-    }).then(response => {
-        console.log(response);
-        /*
-          {
-            status: "ok",
-            articles: [...]
-          }
-        */
-    });
-    // To query sources
-    // All options are optional
-    newsapi.v2.sources({
-        category: 'technology',
-        language: 'en',
-        country: 'us'
-    }).then(response => {
-        console.log(response);
-        /*
-          {
-            status: "ok",
-            sources: [...]
-          }
-        */
-    });
-    return (
-        <div className="pages">
-            <h1>NewsApp</h1>
-            <img className="assetsImage" alt="Welcoming page" src={news}></img>
-        </div>
+  useEffect(() => {
+    fetch(
+      `https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&language=en&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`
     )
+      .then((res) => res.json())
+      .then((res) => setArticles(res.articles))
+      .then((res) => setTotalResults(res.totalResults))
+      .then(() => setLoading(true))
+      .catch((err) => {
+        setapiError(err)
+        console.log(err)
+      })
+  }, [])
+
+  const SearchItem = ({ allNews }) => {
+    const mapNews = () =>
+      allNews
+        .filter((articleName) =>
+          articleName.title.toLowerCase().includes(searchNews.toLowerCase())
+        )
+        .map((article) => (
+          <List.Item style={{ padding: 30 }}>
+            <Grid>
+              <Grid.Column
+                width={11}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start',
+                }}
+              >
+                <Header as="h3">{article.title}</Header>
+                <List.Description style={{ margin: '20px 0' }}>
+                  {article.description}
+                </List.Description>
+                <List bulleted horizontal>
+                  <List.Item>
+                    <a href={article.url}>{article.source.name}</a>
+                  </List.Item>
+                  <List.Item>{article.publishedAt.split('T')[0]}</List.Item>
+                </List>
+              </Grid.Column>
+              <Grid.Column width={5}>
+                <Image src={article.urlToImage} />
+              </Grid.Column>
+            </Grid>
+          </List.Item>
+        ))
+  return <div>{mapNews()}</div>
+  }
+
+  const searchHandler = (event) => {
+    setSearchNews(event.target.value)
+  }
+
+  return (
+    <div className="pages">
+      <Container>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Form>
+            <Form.Group>
+              <Form.Input
+                placeholder="Search topic"
+                name="topic"
+                value={searchNews}
+                onChange={searchHandler}
+                onKeyPress={searchHandler}
+              />
+              <Button type="submit" color="green">
+                Search
+              </Button>
+            </Form.Group>
+          </Form>
+        </div>
+        <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
+          News articles
+        </Header>
+        {articles.length > 0 && (
+          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
+            Found {totalResults} articles on "{searchNews}"
+          </Header>
+        )}
+        <SearchItem allNews={articles} />
+      </Container>
+    </div>
+  )
 }
+
+export default News*/
