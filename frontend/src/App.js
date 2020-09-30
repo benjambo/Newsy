@@ -5,6 +5,7 @@ import './App.css'
 // Pages
 import { Home } from './pages/home'
 import { News } from './pages/news'
+import { Weather } from './pages/weather'
 
 // Components
 import NavigationBar from './components/NavigationBar'
@@ -19,6 +20,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/news" component={News} />
+            <Route path="/weather" component={Weather} />
           </Switch>
         </div>
       </div>

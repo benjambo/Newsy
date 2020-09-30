@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import news from '../assets/news.jpg'
 
+const api = {
+  key: '1147083ab9a3466d9332ac26b5a5c2d0',
+  base: 'https://api.openweathermap.org/data/2.5/',
+}
+
 export const News = () => {
+    const [news, setNews] = useState([])
+    const [newFilter, setNewFilter] = useState('')
+
+     useEffect(() => {
+       fetch('https://api.citybik.es/v2/networks/citybikes-helsinki')
+         .then((res) => res.json())
+         .then((res) => setNews(res.network.stations))
+     }, [])
+
     const NewsAPI = require('newsapi');
     const newsapi = new NewsAPI('1147083ab9a3466d9332ac26b5a5c2d0');
     // To query /v2/top-headlines

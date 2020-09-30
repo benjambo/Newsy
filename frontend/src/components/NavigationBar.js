@@ -11,7 +11,7 @@ const Styles = styled.div`
     margin: 1vh;
   }
   .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 130, 0, 0.4);
   }
   .navbar-default,
   .collapsed {
@@ -60,6 +60,7 @@ const NavigationBar = () => {
           <Nav className="ml-auto">
             <Nav.Link href="#/">Home</Nav.Link>
             <Nav.Link href="#/news">News</Nav.Link>
+            <Nav.Link href="#/weather">Weather</Nav.Link>
             <NavDropdown title="About Us" id="basic-nav-dropdown">
               <NavDropdown.Item
                 target="_blank"
