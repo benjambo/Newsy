@@ -1,0 +1,175 @@
+* {
+  font-family: Avenir, sans-serif;
+  color: white;
+  word-wrap: break-word;
+}
+
+.assetsImage {
+  height: 80vh;
+  width: 100%;
+  border-radius: 16px;
+}
+
+html {
+  background: black;
+}
+
+.App {
+  text-align: center;
+  padding: 2vh;
+  background: black;
+}
+
+.App h1 {
+  margin-bottom: 4vh;
+}
+
+.pages {
+  margin-top: 8vh;
+}
+
+/* Weather */
+
+.weather {
+  background-image: url('./assets/weather.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+  border-radius: 26px;
+}
+
+.weather.cold {
+  background-image: url('./assets/cold.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.weather.warm {
+  background-image: url('./assets/warm.jpg');
+}
+
+.weather-empty p {
+  color: #fff;
+  margin: 0;
+  font-weight: bold;
+}
+
+main {
+  height: 50vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.75)
+  );
+  padding: 25px;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+
+  color: #313131;
+  font-size: 20px;
+
+  transition: 0.4s ease-out;
+}
+
+.search-box .search-bar:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.search-box .search-bar:focus {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.location-box .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  padding: 15px 25px;
+
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.weather-box .weather-description {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+/* Media for Smaller Screens */
+
+@media screen and (max-width: 1000px) {
+  .App {
+    padding: 0;
+  }
+
+  .pages {
+    margin-top: 13vh;
+  }
+
+  .assetsImage {
+    height: auto;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    height: 70vh;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.75)
+    );
+    padding: 25px;
+  }
+}
