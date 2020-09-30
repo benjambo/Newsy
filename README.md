@@ -8,11 +8,9 @@
 
 > NewsApp is an application for everyday usage. Read articles on what's going on in the world
 
-### ✨ [JavaDoc](http://users.metropolia.fi/~abdullh/MovieSurfer_JavaDoc)
+### ✨ [Demo video of project (Coming Soon)]()
 
-### ✨ [Demo video of project](https://drive.google.com/a/metropolia.fi/file/d/1ehcXtf-aUfPu-cBXk6XSxS9hrygYwoDw/view?usp=sharing)
-
-### ✨ [Website Demo](https://moviesurfer-app.herokuapp.com)
+### ✨ [Website Demo (Coming Soon)]()
 
 ## Prerequisites:
 
