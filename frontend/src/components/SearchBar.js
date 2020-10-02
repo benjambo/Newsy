@@ -13,7 +13,12 @@ class SearchBar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.searchForTopic(this.state.searchTopic)
+    if (this.state.searchTopic === '') {
+      alert("Search field can't be empty")
+    } else {
+      this.props.searchForTopic(this.state.searchTopic)
+      //this.setState({ searchTopic: "" })
+    }
   }
 
   render() {

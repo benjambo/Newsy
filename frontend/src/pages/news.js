@@ -18,9 +18,7 @@ class News extends React.Component {
     try {
       this.setState({ loading: true })
       const response = await getArticles(topic)
-      const res = await getPreArticles()
       this.setState({
-        preArticles: res.articles,
         articles: response.articles,
         searchTopic: topic,
         totalResults: response.totalResults,
@@ -29,6 +27,15 @@ class News extends React.Component {
       this.setState({ apiError: 'Could not find any articles' })
     }
     this.setState({ loading: false })
+  }
+
+  async componentDidMount() {
+    try {
+      const response = await getPreArticles()
+      this.setState({ articles: response.articles })
+    } catch (error) {
+      this.setState({ apiError: 'Could not find any articles' })
+    }
   }
 
   render() {
@@ -43,11 +50,18 @@ class News extends React.Component {
     return (
       <Container className="pages">
         <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
-          Search for a topic
+          Search for a news topic
         </Header>
         <SearchBar searchForTopic={this.searchForTopic} />
         <p style={{ textAlign: 'center' }}>
-          Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
+          Powered by{' '}
+          <a
+            href="https://newsapi.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NewsAPI.org
+          </a>
         </p>
         {loading && (
           <p style={{ textAlign: 'center' }}>Searching for articles...</p>
