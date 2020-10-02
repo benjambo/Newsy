@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
 import styled from 'styled-components'
@@ -11,7 +11,7 @@ const Styles = styled.div`
     margin: 1vh;
   }
   .navbar {
-    background-color: rgba(255, 130, 0, 0.4);
+    background-color: #d9b5a5;
   }
   .navbar-default,
   .collapsed {
@@ -51,21 +51,29 @@ const Styles = styled.div`
 `
 
 const NavigationBar = () => {
+  const [expanded, setExpanded] = useState(false)
   return (
     <Styles>
-      <Navbar expand="lg" fixed="top">
-        <Navbar.Brand href="#/">News</Navbar.Brand>
-        <Navbar.Toggle area-controls="basic-navbar-nav" />
+      <Navbar expand="lg" fixed="top" expanded={expanded}>
+        <Navbar.Brand href="#/">Newsy</Navbar.Brand>
+        <Navbar.Toggle
+          area-controls="basic-navbar-nav"
+          onClick={() => setExpanded(expanded ? false : 'expanded')}
+        />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#/">Home</Nav.Link>
-            <Nav.Link href="#/news">News</Nav.Link>
-            <Nav.Link href="#/weather">Weather</Nav.Link>
+            <Nav.Link href="#/" onClick={() => setExpanded(false)}>
+              Home
+            </Nav.Link>
+            <Nav.Link href="#/weather" onClick={() => setExpanded(false)}>
+              Weather
+            </Nav.Link>
             <NavDropdown title="About Us" id="basic-nav-dropdown">
               <NavDropdown.Item
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://benjambo.github.io/portfolio/#/"
+                onClick={() => setExpanded(false)}
               >
                 Benjamin S.
               </NavDropdown.Item>
@@ -73,6 +81,7 @@ const NavigationBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://github.com/Jepu32"
+                onClick={() => setExpanded(false)}
               >
                 Jere S.
               </NavDropdown.Item>

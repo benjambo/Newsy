@@ -3,16 +3,18 @@
   word-wrap: break-word;
 }
 
+a {
+  text-decoration: none;
+}
+
 .assetsImage {
   height: 80vh;
   width: 100%;
   border-radius: 16px;
 }
 
-
 .App {
   text-align: center;
-  padding: 2vh;
 }
 
 .App h1 {
@@ -20,7 +22,97 @@
 }
 
 .pages {
-  margin-top: 8vh;
+  margin-top: 9vh;
+}
+
+/* Home */
+
+.showcase {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-container:after {
+  content: '';
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.video-content {
+  z-index: 2;
+  border-radius: 16px;
+  padding: 2vh;
+}
+
+.video-content h1 {
+  margin: 2vh;
+}
+
+.video-content p {
+  border: 2vh;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  color: #fff !important;
+  border-radius: 5px;
+  border: solid #fff 1px;
+  margin-top: 25px;
+  opacity: 0.7;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+#about {
+  padding: 40px;
+  text-align: center;
+}
+
+#about p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+#about h2 {
+  margin: 30px 0;
+  color: var(--primary-color);
+}
+
+.social a {
+  margin: 0 5px;
 }
 
 /* Weather */
@@ -29,7 +121,7 @@
   background-image: url('./assets/weather1.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-out;
+  transition: 0.4 ease-in-out;
   border-radius: 26px;
 }
 
@@ -37,11 +129,14 @@
   background-image: url('./assets/cold.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-out;
+  transition: 0.4 ease-in-out;
 }
 
 .weather.warm {
   background-image: url('./assets/warm.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-in-out;
 }
 
 .weather-empty p {
@@ -155,17 +250,11 @@ main {
   .assetsImage {
     height: auto;
   }
-
 }
 
 @media screen and (max-width: 550px) {
   main {
     height: 70vh;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.75)
-    );
     padding: 25px;
   }
 }
