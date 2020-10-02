@@ -1,5 +1,5 @@
 import React from 'react'
-import { getArticles } from '../api/api'
+import { getArticles, getPreArticles } from '../api/api'
 import ArticleList from '../components/ArticleList'
 import SearchBar from '../components/SearchBar'
 import { Container, Header } from 'semantic-ui-react'
@@ -7,6 +7,7 @@ import { Container, Header } from 'semantic-ui-react'
 class News extends React.Component {
   state = {
     articles: [],
+    preArticles: [],
     searchTopic: '',
     totalResults: '',
     loading: false,
@@ -17,7 +18,9 @@ class News extends React.Component {
     try {
       this.setState({ loading: true })
       const response = await getArticles(topic)
+      const res = await getPreArticles()
       this.setState({
+        preArticles: res.articles,
         articles: response.articles,
         searchTopic: topic,
         totalResults: response.totalResults,
@@ -30,6 +33,7 @@ class News extends React.Component {
 
   render() {
     const {
+      preArticles,
       articles,
       apiError,
       loading,
@@ -55,7 +59,7 @@ class News extends React.Component {
         )}
         {articles.length > 0 && <ArticleList articles={articles} />}
         {apiError && <p>Could not fetch any articles. Please try again.</p>}
-        {articles.length < 0 && <ArticleList articles={articles} />}
+        {preArticles.length > 0 && <ArticleList articles={preArticles} />}
       </Container>
     )
   }
