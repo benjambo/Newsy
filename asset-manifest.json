@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.css": "/NewsApp/static/css/main.68e4ac1a.chunk.css",
-    "main.js": "/NewsApp/static/js/main.1a88213e.chunk.js",
-    "main.js.map": "/NewsApp/static/js/main.1a88213e.chunk.js.map",
+    "main.css": "/NewsApp/static/css/main.7b4d22cf.chunk.css",
+    "main.js": "/NewsApp/static/js/main.8d0829fb.chunk.js",
+    "main.js.map": "/NewsApp/static/js/main.8d0829fb.chunk.js.map",
     "runtime-main.js": "/NewsApp/static/js/runtime-main.64ac8f5f.js",
     "runtime-main.js.map": "/NewsApp/static/js/runtime-main.64ac8f5f.js.map",
     "static/css/2.cbbea2e1.chunk.css": "/NewsApp/static/css/2.cbbea2e1.chunk.css",
-    "static/js/2.be472da2.chunk.js": "/NewsApp/static/js/2.be472da2.chunk.js",
-    "static/js/2.be472da2.chunk.js.map": "/NewsApp/static/js/2.be472da2.chunk.js.map",
+    "static/js/2.8e19f499.chunk.js": "/NewsApp/static/js/2.8e19f499.chunk.js",
+    "static/js/2.8e19f499.chunk.js.map": "/NewsApp/static/js/2.8e19f499.chunk.js.map",
     "index.html": "/NewsApp/index.html",
-    "precache-manifest.441d997a6b449b123edf66c2cd26d03d.js": "/NewsApp/precache-manifest.441d997a6b449b123edf66c2cd26d03d.js",
+    "precache-manifest.77b9d904c26f1c482469026f5f8d958a.js": "/NewsApp/precache-manifest.77b9d904c26f1c482469026f5f8d958a.js",
     "service-worker.js": "/NewsApp/service-worker.js",
     "static/css/2.cbbea2e1.chunk.css.map": "/NewsApp/static/css/2.cbbea2e1.chunk.css.map",
-    "static/css/main.68e4ac1a.chunk.css.map": "/NewsApp/static/css/main.68e4ac1a.chunk.css.map",
-    "static/js/2.be472da2.chunk.js.LICENSE.txt": "/NewsApp/static/js/2.be472da2.chunk.js.LICENSE.txt",
+    "static/css/main.7b4d22cf.chunk.css.map": "/NewsApp/static/css/main.7b4d22cf.chunk.css.map",
+    "static/js/2.8e19f499.chunk.js.LICENSE.txt": "/NewsApp/static/js/2.8e19f499.chunk.js.LICENSE.txt",
     "static/media/beach.mp4": "/NewsApp/static/media/beach.ef43c5c9.mp4",
     "static/media/semantic.min.css": "/NewsApp/static/media/outline-icons.ef60a4f6.woff",
-    "static/media/index.css": "/NewsApp/static/media/weather1.785672ff.jpg",
-    "static/media/cover.jpg": "/NewsApp/static/media/cover.194e7378.jpg"
+    "static/media/index.css": "/NewsApp/static/media/weather1.785672ff.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.64ac8f5f.js",
     "static/css/2.cbbea2e1.chunk.css",
-    "static/js/2.be472da2.chunk.js",
-    "static/css/main.68e4ac1a.chunk.css",
-    "static/js/main.1a88213e.chunk.js"
+    "static/js/2.8e19f499.chunk.js",
+    "static/css/main.7b4d22cf.chunk.css",
+    "static/js/main.8d0829fb.chunk.js"
   ]
 }
