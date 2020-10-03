@@ -257,4 +257,13 @@ main {
     height: 70vh;
     padding: 25px;
   }
+
+  .video-container {
+    background: url('./assets/cover.jpg') no-repeat center center/cover !important;
+    background-size: 200vh !important;
+  }
+
+  .myVideo {
+    display: none !important;
+  }
 }

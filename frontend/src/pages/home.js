@@ -1,15 +1,15 @@
 import React from 'react'
-import video from '../assets/beach.mp4'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import News from '../components/News'
-//import news from '../assets/news.jpg'
+import beach from '../assets/cover.jpg'
+import video from '../assets/beach.mp4'
 
 export const Home = () => {
   return (
     <div className="home">
       <section className="showcase">
         <div className="video-container">
-          <video autoPlay="autoplay" muted loop="loop" className="myVideo">
+          <video autoPlay="autoplay" muted loop="loop" poster={beach} className="myVideo">
             <source className="myVideo" src={video} type="video/mp4" />
           </video>
         </div>
@@ -46,7 +46,7 @@ export const Home = () => {
             <img className="assetsImage" alt="Welcoming page" src={news}></img>
         </div> */
 
-        /*<section id="about">
+/*<section id="about">
           <h1 id="about">About</h1>
           <p>
             This is a website created for you to stay updated on what's
