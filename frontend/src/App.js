@@ -7,6 +7,8 @@ import 'semantic-ui-css/semantic.min.css'
 import { Home } from './pages/home'
 import News from './components/News'
 import { Weather } from './pages/weather'
+import { SignUp } from './pages/signUp'
+import { SignIn } from './pages/signIn'
 
 // Components
 import NavigationBar from './components/NavigationBar'
@@ -22,6 +24,8 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/news" component={News} />
             <Route path="/weather" component={Weather} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={SignUp} />
           </Switch>
         </div>
       </div>

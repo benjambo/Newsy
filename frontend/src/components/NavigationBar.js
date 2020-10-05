@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import * as auth from './auth'
 
 const NavigationBar = () => {
   const [expanded, setExpanded] = useState(false)
@@ -19,6 +20,18 @@ const NavigationBar = () => {
             <Nav.Link href="#/weather" onClick={() => setExpanded(false)}>
               Weather
             </Nav.Link>
+            {!auth.isLoggedIn() ? (
+              <Nav.Link href="#/signin">Sign In</Nav.Link>
+            ) : null}
+            {auth.isLoggedIn() ? (
+              <Nav.Link href="/sign" onClick={auth.logout}>
+                Logout
+              </Nav.Link>
+            ) : null}
+
+            {auth.isLoggedIn() ? (
+              <Nav.Link>{auth.getUserFirstName()}</Nav.Link>
+            ) : null}
             <NavDropdown title="About Us" id="basic-nav-dropdown">
               <NavDropdown.Item
                 target="_blank"
