@@ -101,7 +101,7 @@ export class SignUp extends Component {
       }
 
       axios
-        .post('http://localhost:3001/signup', newUser)
+        .post('http://localhost:3001/user/signup', newUser)
         .then((res) => {
           if (res.status === 200) {
             window.location = '/'
