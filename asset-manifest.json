@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/NewsApp/static/css/main.23d2ddac.chunk.css",
-    "main.js": "/NewsApp/static/js/main.c123718b.chunk.js",
-    "main.js.map": "/NewsApp/static/js/main.c123718b.chunk.js.map",
+    "main.css": "/NewsApp/static/css/main.634515cd.chunk.css",
+    "main.js": "/NewsApp/static/js/main.e7b8cae2.chunk.js",
+    "main.js.map": "/NewsApp/static/js/main.e7b8cae2.chunk.js.map",
     "runtime-main.js": "/NewsApp/static/js/runtime-main.64ac8f5f.js",
     "runtime-main.js.map": "/NewsApp/static/js/runtime-main.64ac8f5f.js.map",
-    "static/css/2.cbbea2e1.chunk.css": "/NewsApp/static/css/2.cbbea2e1.chunk.css",
-    "static/js/2.518b50e2.chunk.js": "/NewsApp/static/js/2.518b50e2.chunk.js",
-    "static/js/2.518b50e2.chunk.js.map": "/NewsApp/static/js/2.518b50e2.chunk.js.map",
+    "static/css/2.92681990.chunk.css": "/NewsApp/static/css/2.92681990.chunk.css",
+    "static/js/2.0306b8c5.chunk.js": "/NewsApp/static/js/2.0306b8c5.chunk.js",
+    "static/js/2.0306b8c5.chunk.js.map": "/NewsApp/static/js/2.0306b8c5.chunk.js.map",
     "index.html": "/NewsApp/index.html",
-    "precache-manifest.c0e8404f8d969e9696cb39eb10bdda2c.js": "/NewsApp/precache-manifest.c0e8404f8d969e9696cb39eb10bdda2c.js",
+    "precache-manifest.afca910e9b79a6a748c09c25a0851a7f.js": "/NewsApp/precache-manifest.afca910e9b79a6a748c09c25a0851a7f.js",
     "service-worker.js": "/NewsApp/service-worker.js",
-    "static/css/2.cbbea2e1.chunk.css.map": "/NewsApp/static/css/2.cbbea2e1.chunk.css.map",
-    "static/css/main.23d2ddac.chunk.css.map": "/NewsApp/static/css/main.23d2ddac.chunk.css.map",
-    "static/js/2.518b50e2.chunk.js.LICENSE.txt": "/NewsApp/static/js/2.518b50e2.chunk.js.LICENSE.txt",
+    "static/css/2.92681990.chunk.css.map": "/NewsApp/static/css/2.92681990.chunk.css.map",
+    "static/css/main.634515cd.chunk.css.map": "/NewsApp/static/css/main.634515cd.chunk.css.map",
+    "static/js/2.0306b8c5.chunk.js.LICENSE.txt": "/NewsApp/static/js/2.0306b8c5.chunk.js.LICENSE.txt",
     "static/media/beach.mp4": "/NewsApp/static/media/beach.ef43c5c9.mp4",
     "static/media/semantic.min.css": "/NewsApp/static/media/outline-icons.ef60a4f6.woff",
     "static/media/index.css": "/NewsApp/static/media/weather1.785672ff.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.64ac8f5f.js",
-    "static/css/2.cbbea2e1.chunk.css",
-    "static/js/2.518b50e2.chunk.js",
-    "static/css/main.23d2ddac.chunk.css",
-    "static/js/main.c123718b.chunk.js"
+    "static/css/2.92681990.chunk.css",
+    "static/js/2.0306b8c5.chunk.js",
+    "static/css/main.634515cd.chunk.css",
+    "static/js/main.e7b8cae2.chunk.js"
   ]
 }
