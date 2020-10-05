@@ -21,6 +21,48 @@ a {
   margin-bottom: 4vh;
 }
 
+/* Navigation Bar */
+
+form {
+  width: auto;
+}
+button {
+  margin: 1vh;
+}
+.navbar {
+  background-color: #d9b5a5;
+}
+.navbar-default,
+.collapsed {
+  border-color: white !important;
+  background-color: white !important;
+}
+.navbar-default,
+.toggle {
+  background-color: white !important;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: white !important;
+  margin: 2vh 2vw 2vh 2vw !important;
+}
+.navbar-brand:hover,
+.navbar-nav:hover .nav-link:hover {
+  color: #690505 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+  color: #690505 !important;
+}
+.navbar-light .navbar-brand {
+  color: white !important;
+}
+.navbar-light:hover .navbar-brand:hover {
+  color: #690505 !important;
+}
+
 /* Home */
 
 .showcase {
@@ -253,7 +295,6 @@ main {
 }
 
 @media screen and (max-width: 550px) {
-
   .video-container {
     background: url('./assets/cover.jpg') no-repeat center center/cover !important;
     background-size: 200vh !important;
