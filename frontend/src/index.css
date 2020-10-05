@@ -22,7 +22,7 @@ a {
 }
 
 .pages {
-  margin-top: 9vh;
+  /*margin-top: 7vh;*/
 }
 
 /* Home */
@@ -64,6 +64,7 @@ a {
   top: 0;
   left: 0;
   position: absolute;
+  background: rgba(0, 0, 0, 0);
 }
 
 .video-content {
@@ -74,10 +75,6 @@ a {
 
 .video-content h1 {
   margin: 2vh;
-}
-
-.video-content p {
-  border: 2vh;
 }
 
 .btn {
@@ -122,7 +119,7 @@ a {
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease-in-out;
-  border-radius: 26px;
+  height: 100vh;
 }
 
 .weather.cold {
@@ -146,13 +143,8 @@ a {
 }
 
 main {
-  height: 50vh;
-  /*background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.65)
-  );*/
-  padding: 25px;
+  height: auto;
+  padding: 12vh 2vh 2vh 2vh;
   border-radius: 24px;
 }
 
@@ -183,7 +175,7 @@ main {
 }
 
 .search-box .search-bar:hover {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .search-box .search-bar:focus {
@@ -243,20 +235,12 @@ main {
     padding: 0;
   }
 
-  .pages {
-    margin-top: 13vh;
-  }
-
   .assetsImage {
     height: auto;
   }
 }
 
 @media screen and (max-width: 550px) {
-  main {
-    height: 70vh;
-    padding: 25px;
-  }
 
   .video-container {
     background: url('./assets/cover.jpg') no-repeat center center/cover !important;

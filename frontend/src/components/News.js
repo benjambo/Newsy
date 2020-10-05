@@ -48,11 +48,27 @@ class News extends React.Component {
       totalResults,
     } = this.state
     return (
-      <Container className="pages">
+      <Container>
         <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
           Search for a news topic
         </Header>
         <SearchBar searchForTopic={this.searchForTopic} />
+
+        {loading && (
+          <p style={{ textAlign: 'center' }}>Searching for articles...</p>
+        )}
+        {articles.length > 0 && searchTopic.length !== 0 ? (
+          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
+            Found {totalResults} articles on "{searchTopic}"
+          </Header>
+        ) : (
+          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
+            Trending articles right now
+          </Header>
+        )}
+        {articles.length > 0 && <ArticleList articles={articles} />}
+        {apiError && <p>Could not fetch any articles. Please try again.</p>}
+        {preArticles.length > 0 && <ArticleList articles={preArticles} />}
         <p style={{ textAlign: 'center' }}>
           Powered by{' '}
           <a
@@ -63,17 +79,6 @@ class News extends React.Component {
             NewsAPI.org
           </a>
         </p>
-        {loading && (
-          <p style={{ textAlign: 'center' }}>Searching for articles...</p>
-        )}
-        {articles.length > 0 && (
-          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
-            Found {totalResults} articles on "{searchTopic}"
-          </Header>
-        )}
-        {articles.length > 0 && <ArticleList articles={articles} />}
-        {apiError && <p>Could not fetch any articles. Please try again.</p>}
-        {preArticles.length > 0 && <ArticleList articles={preArticles} />}
       </Container>
     )
   }
