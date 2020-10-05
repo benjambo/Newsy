@@ -3,6 +3,7 @@ import { getArticles, getPreArticles } from '../api/api'
 import ArticleList from './ArticleList'
 import SearchBar from './SearchBar'
 import { Container, Header } from 'semantic-ui-react'
+import axios from 'axios'
 
 class News extends React.Component {
   state = {
@@ -15,6 +16,9 @@ class News extends React.Component {
   }
 
   searchForTopic = async (topic) => {
+
+    axios.post('http://localhost:3001/api/newsSearch',{topic}).then(res => console.log(res))
+
     try {
       this.setState({ loading: true })
       const response = await getArticles(topic)

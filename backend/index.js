@@ -30,9 +30,9 @@ app.post('/api/news', (request, response) => {
     })
   })
   app.post('/api/newsSearch', (request, response) => {
-
+    //console.log(request)
     const newsSearch = new NewsSearch({
-      keyword:"covid"
+      keyword: request.body.topic
     })
   
     newsSearch.save().then(savedNews => {
