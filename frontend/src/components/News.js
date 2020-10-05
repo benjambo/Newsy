@@ -2,6 +2,7 @@ import React from 'react'
 import { getArticles, getPreArticles } from '../api/api'
 import ArticleList from './ArticleList'
 import SearchBar from './SearchBar'
+import { FadeInSection } from './FadeInSection'
 import { Container, Header } from 'semantic-ui-react'
 
 class News extends React.Component {
@@ -48,38 +49,40 @@ class News extends React.Component {
       totalResults,
     } = this.state
     return (
-      <Container>
-        <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
-          Search for a news topic
-        </Header>
-        <SearchBar searchForTopic={this.searchForTopic} />
+      <FadeInSection>
+        <Container>
+          <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
+            Search for a news topic
+          </Header>
+          <SearchBar searchForTopic={this.searchForTopic} />
 
-        {loading && (
-          <p style={{ textAlign: 'center' }}>Searching for articles...</p>
-        )}
-        {articles.length > 0 && searchTopic.length !== 0 ? (
-          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
-            Found {totalResults} articles on "{searchTopic}"
-          </Header>
-        ) : (
-          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
-            Trending articles right now
-          </Header>
-        )}
-        {articles.length > 0 && <ArticleList articles={articles} />}
-        {apiError && <p>Could not fetch any articles. Please try again.</p>}
-        {preArticles.length > 0 && <ArticleList articles={preArticles} />}
-        <p style={{ textAlign: 'center' }}>
-          Powered by{' '}
-          <a
-            href="https://newsapi.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            NewsAPI.org
-          </a>
-        </p>
-      </Container>
+          {loading && (
+            <p style={{ textAlign: 'center' }}>Searching for articles...</p>
+          )}
+          {articles.length > 0 && searchTopic.length !== 0 ? (
+            <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
+              Found {totalResults} articles on "{searchTopic}"
+            </Header>
+          ) : (
+            <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
+              Trending articles right now
+            </Header>
+          )}
+          {articles.length > 0 && <ArticleList articles={articles} />}
+          {apiError && <p>Could not fetch any articles. Please try again.</p>}
+          {preArticles.length > 0 && <ArticleList articles={preArticles} />}
+          <p style={{ textAlign: 'center' }}>
+            Powered by{' '}
+            <a
+              href="https://newsapi.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NewsAPI.org
+            </a>
+          </p>
+        </Container>
+      </FadeInSection>
     )
   }
 }

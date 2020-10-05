@@ -1,58 +1,10 @@
 import React, { useState } from 'react'
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import styled from 'styled-components'
-
-const Styles = styled.div`
-  form {
-    width: auto;
-  }
-  button {
-    margin: 1vh;
-  }
-  .navbar {
-    background-color: #d9b5a5;
-  }
-  .navbar-default,
-  .collapsed {
-    border-color: white;
-    background-color: white;
-  }
-  .navbar-default,
-  .toggle {
-    background-color: white;
-  }
-  .navbar-brand,
-  .navbar-nav .nav-link {
-    color: white;
-    margin: 2vh 2vw 2vh 2vw;
-    &:hover {
-      color: #690505;
-    }
-  }
-  .navbar-light .navbar-nav .nav-link {
-    color: white;
-    &:hover {
-      color: #690505;
-    }
-  }
-  .navbar-light .navbar-brand {
-    color: white;
-    &:hover {
-      color: #690505;
-    }
-  }
-  .dropdown {
-    color: black;
-    &:hover {
-      color: #690505;
-    }
-  }
-`
 
 const NavigationBar = () => {
   const [expanded, setExpanded] = useState(false)
   return (
-    <Styles>
+    <div>
       <Navbar expand="lg" fixed="top" expanded={expanded}>
         <Navbar.Brand href="#/">Newsy</Navbar.Brand>
         <Navbar.Toggle
@@ -88,7 +40,7 @@ const NavigationBar = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </Styles>
+    </div>
   )
 }
 export default NavigationBar

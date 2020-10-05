@@ -21,8 +21,46 @@ a {
   margin-bottom: 4vh;
 }
 
-.pages {
-  /*margin-top: 7vh;*/
+/* Navigation Bar */
+
+form {
+  width: auto;
+}
+button {
+  margin: 1vh;
+}
+.navbar {
+  background-color: #d9b5a5;
+}
+.navbar-default,
+.collapsed {
+  border-color: white !important;
+  background-color: white !important;
+}
+.navbar-default,
+.toggle {
+  background-color: white !important;
+}
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: white !important;
+  margin: 2vh 2vw 2vh 2vw !important;
+}
+.navbar-brand:hover,
+.navbar-nav:hover .nav-link:hover {
+  color: #690505 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+  color: #690505 !important;
+}
+.navbar-light .navbar-brand {
+  color: white !important;
+}
+.navbar-light:hover .navbar-brand:hover {
+  color: #690505 !important;
 }
 
 /* Home */
@@ -228,6 +266,22 @@ main {
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
+/* Fade in Text */
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 /* Media for Smaller Screens */
 
 @media screen and (max-width: 1000px) {
@@ -241,7 +295,6 @@ main {
 }
 
 @media screen and (max-width: 550px) {
-
   .video-container {
     background: url('./assets/cover.jpg') no-repeat center center/cover !important;
     background-size: 200vh !important;
