@@ -30,14 +30,20 @@ passport.use(
 
 // Authenticated local strategy using email and password
 passport.use(
-  new LocalStrategy((email, password, done) => {
-    User.findOne({ email }, (err, user) => {
-      // Something has gone wrong
-      if (err) return done(err)
-      // If no user exists
-      if (!user) return done(null, false)
-      // Check if password is correct
-      user.comparePassword(password, done)
-    })
-  })
+  new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+    },
+    (email, password, done) => {
+      User.findOne({ email }, (err, user) => {
+        // Something has gone wrong
+        if (err) return done(err)
+        // If no user exists
+        if (!user) return done(null, false)
+        // Check if password is correct
+        user.comparePassword(password, done)
+      })
+    }
+  )
 )

@@ -52,10 +52,10 @@ userRouter.post(
   passport.authenticate('local', { session: false }),
   (req, res) => {
     if (req.isAuthenticated()) {
-      const { _id, email } = req.user
-      const token = signToken(_id)
+      const { email, password } = req.user
+      const token = signToken(password)
       res.cookie('access_token', token, { httpOnly: true, sameSite: true })
-      res.status(200).json({ isAuthenticated: true, user: { email } })
+      res.status(200).json({ isAuthenticated: true, user: { email, password } })
     }
   }
 )
