@@ -1,5 +1,7 @@
+require('dotenv').config()
+
 const mongoose = require('mongoose')
-const url = 'mongodb+srv://NewsAppProjeckt:2Io1WlMQWpibF5qw@newsappdb.6ikab.mongodb.net/NewsAppDB?retryWrites=true&w=majority'
+const url = process.env.MONGO_URL
 
     mongoose.connect(url,
         { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
