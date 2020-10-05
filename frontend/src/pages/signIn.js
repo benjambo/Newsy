@@ -84,7 +84,7 @@ export class SignIn extends Component {
       }
 
       axios
-        .post('http://localhost:3001', oldUser)
+        .post('http://localhost:3001/user/signin', oldUser)
         .then((res) => {
           if (res.status === 200) {
             window.location = '/'
