@@ -12,7 +12,8 @@ const signToken = (userID) => {
       iss: 'Newsy',
       sub: userID,
     },
-    'Newsy'
+    'Newsy',
+    { expiresIn: '1h' }
   )
 }
 
