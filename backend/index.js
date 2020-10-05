@@ -5,7 +5,7 @@ const app = express()
 const mongoose = require('mongoose')
 const url = process.env.MONGO_URL
 const bodyParser = require('body-parser')
-const CookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 const News = require('./models/News')
 const NewsSearch = require('./models/News')
 const User = require('./models/User')
@@ -27,6 +27,7 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(cookieParser())
 app.use(express.static('build'))
 
 const userRouter = require('./routes/User')
