@@ -10,7 +10,7 @@ export const getPreArticles = async () => {
 
 export const getArticles = async (topic) => {
   const response = await fetch(
-    `https://newsapi.org/v2/everything?q=${topic}&language=en&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`
+    `https://newsapi.org/v2/everything?q=${topic}&language=en&sortBy=publishedAt&pageSize=100&apiKey=${NEWS_API_KEY}`
   )
   const json = await response.json()
   return json
