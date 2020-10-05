@@ -5,6 +5,7 @@ import { FadeInSection } from './FadeInSection'
 const ArticleItem = (props) => {
   const { article } = props
   return (
+    <FadeInSection>
       <List.Item style={{ padding: 30 }}>
         <Grid>
           <Grid.Column
@@ -56,18 +57,31 @@ const ArticleItem = (props) => {
           </Grid.Column>
         </Grid>
       </List.Item>
+    </FadeInSection>
   )
 }
 
 const ArticleList = (props) => {
   return (
-    <FadeInSection>
+    <div>
       <List divided style={{ maxWidth: 900, margin: '0 auto' }}>
         {props.articles.map((article, index) => (
           <ArticleItem article={article} key={article.title + index} />
         ))}
       </List>
-    </FadeInSection>
+      <FadeInSection>
+        <p style={{ textAlign: 'center' }}>
+          Powered by{' '}
+          <a
+            href="https://newsapi.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NewsAPI.org
+          </a>
+        </p>
+      </FadeInSection>
+    </div>
   )
 }
 
