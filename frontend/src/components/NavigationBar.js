@@ -24,13 +24,9 @@ const NavigationBar = () => {
               <Nav.Link href="#/signin">Sign In</Nav.Link>
             ) : null}
             {auth.isLoggedIn() ? (
-              <Nav.Link href="/sign" onClick={auth.logout}>
+              <Nav.Link href="/" onClick={auth.logout}>
                 Logout
               </Nav.Link>
-            ) : null}
-
-            {auth.isLoggedIn() ? (
-              <Nav.Link>{auth.getUserFirstName()}</Nav.Link>
             ) : null}
             <NavDropdown title="About Us" id="basic-nav-dropdown">
               <NavDropdown.Item
