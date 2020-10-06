@@ -3,6 +3,7 @@ import { getArticles, getPreArticles } from '../api/api'
 import ArticleList from './ArticleList'
 import SearchBar from './SearchBar'
 import { Container, Header } from 'semantic-ui-react'
+import * as auth from './auth'
 import axios from 'axios'
 
 class News extends React.Component {
@@ -16,8 +17,9 @@ class News extends React.Component {
   }
 
   searchForTopic = async (topic) => {
-
-    axios.post('http://localhost:3001/api/newsSearch',{topic}).then(res => console.log(res))
+    axios
+      .post('http://localhost:3001/api/newsSearch', { topic })
+      .then((res) => console.log(res))
 
     try {
       this.setState({ loading: true })
@@ -53,10 +55,14 @@ class News extends React.Component {
     } = this.state
     return (
       <Container>
-        <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
-          Search for a news topic
-        </Header>
-        <SearchBar searchForTopic={this.searchForTopic} />
+        {auth.isLoggedIn() ? (
+          <div>
+            <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
+              Search for a news topic
+            </Header>
+            <SearchBar searchForTopic={this.searchForTopic} />
+          </div>
+        ) : null}
 
         {loading && (
           <p style={{ textAlign: 'center' }}>Searching for articles...</p>
@@ -66,9 +72,22 @@ class News extends React.Component {
             Found {totalResults} articles on "{searchTopic}"
           </Header>
         ) : (
-          <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
-            Trending articles right now
-          </Header>
+          <div>
+            {!auth.isLoggedIn() ? (
+              <div>
+                <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
+                  Trending articles right now
+                </Header>
+              </div>
+            ) : null}
+            {auth.isLoggedIn() ? (
+              <div>
+                <Header as="h4" style={{ textAlign: 'center', margin: 20 }}>
+                  Trending articles right now
+                </Header>
+              </div>
+            ) : null}
+          </div>
         )}
         {articles.length > 0 && <ArticleList articles={articles} />}
         {apiError && <p>Could not fetch any articles. Please try again.</p>}

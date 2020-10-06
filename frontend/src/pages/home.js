@@ -3,7 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 //import { Spring } from 'react-spring/renderprops'
 import News from '../components/News'
 //import NewsIdle from '../components/NewsIdle'
-import beach from '../assets/cover.jpg'
+//import beach from '../assets/cover.jpg'
 import video from '../assets/beach.mp4'
 
 export const Home = () => {
@@ -11,13 +11,7 @@ export const Home = () => {
     <div className="home">
       <section className="showcase">
         <div className="video-container">
-          <video
-            autoPlay="autoplay"
-            muted
-            loop="loop"
-            poster={beach}
-            className="myVideo"
-          >
+          <video autoPlay="autoplay" muted loop="loop" className="myVideo">
             <source className="myVideo" src={video} type="video/mp4" />
           </video>
         </div>
