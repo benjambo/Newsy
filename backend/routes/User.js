@@ -13,7 +13,7 @@ const signToken = (userID) => {
       sub: userID,
     },
     'Newsy',
-    { expiresIn: '1h' }
+    { expiresIn: '15000' }
   )
 }
 
@@ -57,6 +57,25 @@ userRouter.post(
       res.cookie('access_token', token, { httpOnly: true, sameSite: true })
       res.status(200).json({ isAuthenticated: true, user: { email }, token: token })
     }
+  }
+)
+
+userRouter.get(
+  '/signout',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    req.logout()
+    res.clearCookie('access_token')
+    res.json({ user: { email: '' }, success: true })
+  }
+)
+
+userRouter.get(
+  '/authenticated',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { email } = req.user
+    res.status(200).json({ isAuthenticated: true, user: { email } })
   }
 )
 module.exports = userRouter
