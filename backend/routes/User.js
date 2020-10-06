@@ -13,7 +13,7 @@ const signToken = (userID) => {
       sub: userID,
     },
     'Newsy',
-    { expiresIn: '15000' }
+    { expiresIn: '3h' }
   )
 }
 
@@ -55,7 +55,9 @@ userRouter.post(
       const { _id, email } = req.user
       const token = signToken(_id)
       res.cookie('access_token', token, { httpOnly: true, sameSite: true })
-      res.status(200).json({ isAuthenticated: true, user: { email }, token: token })
+      res
+        .status(200)
+        .json({ isAuthenticated: true, user: { email }, token: token })
     }
   }
 )

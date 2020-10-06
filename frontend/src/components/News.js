@@ -80,6 +80,11 @@ class News extends React.Component {
                 <Header as="h2" style={{ textAlign: 'center', margin: 20 }}>
                   Trending articles right now
                 </Header>
+                <div className="createAccount">
+                <a href="#/signin">
+                  <small>Sign in to use search</small>
+                </a>
+                </div>
               </div>
             ) : null}
             {auth.isLoggedIn() ? (
