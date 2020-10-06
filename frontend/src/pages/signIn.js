@@ -3,6 +3,7 @@ import { Spring } from 'react-spring/renderprops'
 import axios from 'axios'
 //import auth from '../components/auth';
 import styled from 'styled-components'
+import {setToken} from '../components/auth'
 
 const Styles = styled.div`
     .navbar {
@@ -88,6 +89,7 @@ export class SignIn extends Component {
         .then((res) => {
           if (res.status === 200) {
             window.location = '/'
+            setToken(res.data.token)
           } else {
             window.location = '#/signin'
           }
