@@ -153,25 +153,22 @@ button {
 /* Weather */
 
 .weather {
-  background-image: url('./assets/weather1.jpg');
+  background-image: url('./assets/land.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-in-out;
   height: 100vh;
 }
 
 .weather.cold {
-  background-image: url('./assets/cold.jpg');
+  background-image: url('./assets/colder.jpg') ;
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-in-out;
 }
 
 .weather.warm {
-  background-image: url('./assets/warm.jpg');
+  background-image: url('./assets/warmer.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-in-out;
 }
 
 .weather-empty p {
