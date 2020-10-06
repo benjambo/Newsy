@@ -17,9 +17,11 @@ class News extends React.Component {
   }
 
   searchForTopic = async (topic) => {
+    const token = auth.getToken();
     axios
-      .post('http://localhost:3001/api/newsSearch', { topic })
+      .post('http://localhost:3001/api/newsSearch', { topic, token })
       .then((res) => console.log(res))
+    
 
     try {
       this.setState({ loading: true })

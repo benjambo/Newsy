@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -9,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const News = require('./models/News')
 const NewsSearch = require('./models/News')
 const User = require('./models/User')
+const Auth = require('./auth')
 
 const PORT = 3001
 
@@ -51,13 +51,15 @@ app.post('/api/news', (request, response) => {
 })
 app.post('/api/newsSearch', (request, response) => {
   //console.log(request)
-  const newsSearch = new NewsSearch({
-    keyword: request.body.topic,
-  })
+  if(Auth.jwt(request.body.token).iss === 'Newsy'){
+    const newsSearch = new NewsSearch({
+      keyword: request.body.topic,
+    })
 
-  newsSearch.save().then((savedNews) => {
-    response.json(savedNews.toJSON())
-  })
+    newsSearch.save().then((savedNews) => {
+      response.json(savedNews.toJSON())
+    })
+}
 })
 
 app.listen(PORT, () => {
