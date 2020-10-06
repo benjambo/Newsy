@@ -3,7 +3,9 @@ import { Spring } from 'react-spring/renderprops'
 import axios from 'axios'
 //import auth from '../components/auth';
 import styled from 'styled-components'
-import {setToken} from '../components/auth'
+import { setToken } from '../components/auth'
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const Styles = styled.div`
     .navbar {
@@ -99,7 +101,15 @@ export class SignIn extends Component {
           console.log(err)
         })
     } else {
-      console.log('INVALID FORM - ERROR MESSAGE')
+      confirmAlert({
+        title: 'Error',
+        message: 'Failed to login. Please try again',
+        buttons: [
+          {
+            label: 'Ok',
+          },
+        ],
+      })
     }
   }
 

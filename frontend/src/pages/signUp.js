@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Spring } from 'react-spring/renderprops'
 import axios from 'axios'
 //import userService from '../services/accounts';
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 import styled from 'styled-components'
 
 const Styles = styled.div`
@@ -115,7 +117,15 @@ export class SignUp extends Component {
         })
       console.log(this.state)
     } else {
-      console.log('INVALID FORM - ERROR MESSAGE')
+      confirmAlert({
+        title: 'Error',
+        message: 'Failed to signup. Please try again',
+        buttons: [
+          {
+            label: 'Ok',
+          },
+        ],
+      })
     }
   }
 
