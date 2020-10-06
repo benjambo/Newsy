@@ -33,32 +33,36 @@ app.use(express.static('build'))
 const userRouter = require('./routes/User')
 app.use('/user', userRouter)
 
-app.post('/api/news', (request, response) => {
-  /*
-    const body = request.body
-    if (body.clicks === undefined) {
-      return response.status(400).json({ error: 'content missing' })
-    }
-    */
-  const news = new News({
-    id: 11111111,
-    clicks: 123,
-  })
-
-  news.save().then((savedNews) => {
-    response.json(savedNews.toJSON())
-  })
-})
 app.post('/api/newsSearch', (request, response) => {
   //console.log(request)
+  const key = request.body.topic
+  
+  //cant send requests without authentication
   if(Auth.jwt(request.body.token).iss === 'Newsy'){
-    const newsSearch = new NewsSearch({
-      keyword: request.body.topic,
-    })
 
-    newsSearch.save().then((savedNews) => {
-      response.json(savedNews.toJSON())
-    })
+    //if keyword exists update times_searched by one. else create new document
+    News.findOne({keyword:key}, (req, res) =>{
+      if(res){
+        News.findOneAndUpdate({ keyword:key }, { $inc: {'times_searched': 1 } }, {new: true },function(err, response) {
+          if (err) {
+          console.log(err);
+         } else {
+          console.log(response);
+         }
+        })
+         
+
+      }else{
+      const newsSearch = new NewsSearch({
+        keyword: request.body.topic,
+        times_searched: 1
+      })
+      newsSearch.save().then((savedNews) => {
+        response.json(savedNews.toJSON())
+      })
+    }
+  })
+
 }
 })
 
