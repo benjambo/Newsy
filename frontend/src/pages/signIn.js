@@ -99,6 +99,15 @@ export class SignIn extends Component {
         })
         .catch((err) => {
           console.log(err)
+          confirmAlert({
+            title: 'Error',
+            message: 'Failed to signin. Please try again',
+            buttons: [
+              {
+                label: 'Ok',
+              },
+            ],
+          })
         })
     } else {
       confirmAlert({

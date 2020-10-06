@@ -106,7 +106,7 @@ export class SignUp extends Component {
         .post('http://localhost:3001/user/signup', newUser)
         .then((res) => {
           if (res.status === 201) {
-            window.location = '/'
+            window.location = '#/signin'
           } else {
             window.location = '#/signup'
           }
@@ -114,6 +114,15 @@ export class SignUp extends Component {
         })
         .catch((err) => {
           console.log(err)
+          confirmAlert({
+            title: 'Error',
+            message: 'Failed to signup. Please try again',
+            buttons: [
+              {
+                label: 'Ok',
+              },
+            ],
+          })
         })
       console.log(this.state)
     } else {
