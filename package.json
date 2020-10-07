@@ -9,7 +9,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "dev": "nodemon index.js"
   },
   "author": "",
@@ -23,6 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.7",
     "nodemon": "^2.0.4",
+    "npm": "^6.14.8",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0"
