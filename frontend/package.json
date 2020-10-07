@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://benjambo.github.io/NewsApp/",
+  "homepage": "https://benjambo.github.io/Newsy/",
   "dependencies": {
     "@popperjs/core": "^2.5.3",
     "@testing-library/jest-dom": "^4.2.4",
