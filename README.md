@@ -14,7 +14,11 @@
 
 ## Prerequisites:
 
-- React 16.13.1
+- React.JS 16.13.1
+- Axios
+- MongoDB
+- Express
+- Node.JS
 
 # How to use:
 
