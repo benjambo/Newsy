@@ -37,6 +37,48 @@ npm install
 npm start      #For scripts start
 ```
 
+# RestAPI
+
+The use of the RestAPI
+
+## Usage
+
+```sh
+app.post('/api/newsSearch', (request, response) => {
+  //console.log(request)
+  const key = request.body.topic
+
+  //cant send requests without authentication
+  if (Auth.jwt(request.body.token).iss === 'Newsy') {
+    //if keyword exists update times_searched by one. else create new document
+    News.findOne({ keyword: key }, (req, res) => {
+      if (res) {
+        News.findOneAndUpdate(
+          { keyword: key },
+          { $inc: { times_searched: 1 } },
+          { new: true },
+          function (err, response) {
+            if (err) {
+              console.log(err)
+            } else {
+              console.log(response)
+            }
+          }
+        )
+      } else {
+        const newsSearch = new NewsSearch({
+          keyword: request.body.topic,
+          times_searched: 1,
+        })
+        newsSearch.save().then((savedNews) => {
+          response.json(savedNews.toJSON())
+        })
+      }
+    })
+  }
+})
+```
+
 ## Author:
 
 👤 **Benjamin Bowo, Jere Saarelma**
