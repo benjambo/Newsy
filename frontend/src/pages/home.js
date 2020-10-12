@@ -2,7 +2,7 @@ import React from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 //import { Spring } from 'react-spring/renderprops'
 import News from '../components/News'
-//import NewsIdle from '../components/NewsIdle'
+import NewsIdle from '../components/NewsIdle'
 //import beach from '../assets/cover.jpg'
 import video from '../assets/beach.mp4'
 
@@ -39,7 +39,7 @@ export const Home = () => {
         </div>
       </section>
       <section id="news">
-        <News />
+        <NewsIdle />
         <br />
       </section>
     </div>
