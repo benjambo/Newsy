@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Newsy/static/css/main.b2f786f0.chunk.css",
-    "main.js": "/Newsy/static/js/main.75526764.chunk.js",
-    "main.js.map": "/Newsy/static/js/main.75526764.chunk.js.map",
+    "main.js": "/Newsy/static/js/main.ca37e597.chunk.js",
+    "main.js.map": "/Newsy/static/js/main.ca37e597.chunk.js.map",
     "runtime-main.js": "/Newsy/static/js/runtime-main.8e08e80e.js",
     "runtime-main.js.map": "/Newsy/static/js/runtime-main.8e08e80e.js.map",
     "static/css/2.ed184cb5.chunk.css": "/Newsy/static/css/2.ed184cb5.chunk.css",
     "static/js/2.f08a1eba.chunk.js": "/Newsy/static/js/2.f08a1eba.chunk.js",
     "static/js/2.f08a1eba.chunk.js.map": "/Newsy/static/js/2.f08a1eba.chunk.js.map",
     "index.html": "/Newsy/index.html",
-    "precache-manifest.9b7c7831b5b25da8bf17c0ed57e801e5.js": "/Newsy/precache-manifest.9b7c7831b5b25da8bf17c0ed57e801e5.js",
+    "precache-manifest.49ec1d5850ee93476a7635574875bba7.js": "/Newsy/precache-manifest.49ec1d5850ee93476a7635574875bba7.js",
     "service-worker.js": "/Newsy/service-worker.js",
     "static/css/2.ed184cb5.chunk.css.map": "/Newsy/static/css/2.ed184cb5.chunk.css.map",
     "static/css/main.b2f786f0.chunk.css.map": "/Newsy/static/css/main.b2f786f0.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.ed184cb5.chunk.css",
     "static/js/2.f08a1eba.chunk.js",
     "static/css/main.b2f786f0.chunk.css",
-    "static/js/main.75526764.chunk.js"
+    "static/js/main.ca37e597.chunk.js"
   ]
 }

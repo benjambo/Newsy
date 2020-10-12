@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0abf4ad887b4156aed1a04d554dc8982",
+    "revision": "4290125e14cf481dfa8c8fa49d310fb0",
     "url": "/Newsy/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Newsy/static/css/2.ed184cb5.chunk.css"
   },
   {
-    "revision": "a43ea6ed953624184fd5",
+    "revision": "6f2ff6a0dd78c897c9fd",
     "url": "/Newsy/static/css/main.b2f786f0.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Newsy/static/js/2.f08a1eba.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a43ea6ed953624184fd5",
-    "url": "/Newsy/static/js/main.75526764.chunk.js"
+    "revision": "6f2ff6a0dd78c897c9fd",
+    "url": "/Newsy/static/js/main.ca37e597.chunk.js"
   },
   {
     "revision": "aa77a95c87e74147dae4",
