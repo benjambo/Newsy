@@ -37,22 +37,65 @@ npm install
 npm start      #For scripts start
 ```
 
-# RestAPI
+# Rest API
 
-The use of the RestAPI
+Use of the RestAPI
 
-## Usage
+## Usage:
+
+Show News in JSON
+
+- URL
+
+```sh
+  /api/newsSearch
+```
+
+- Method
+
+```sh
+  GET
+```
+
+- URL parameters
+
+```sh
+  keyword={String} Searched words
+  times_searched={Integer} Number of search times for the word
+  id={String} Keyword ID
+```
+
+Show News in JSON
+
+- URL
+
+```sh
+  /api/newsSearch
+```
+
+- Method
+
+```sh
+  GET
+```
+
+- URL parameters
+
+```sh
+  keyword={String} Searched words
+  times_searched={Integer} Number of search times for the word
+  id={String} Keyword ID
+```
 
 News Search:
 
 ```sh
 app.post('/api/newsSearch', (request, response) => {
-  //console.log(request)
   const key = request.body.topic
 
-  //cant send requests without authentication
+  // Cant send requests without authentication
   if (Auth.jwt(request.body.token).iss === 'Newsy') {
-    //if keyword exists update times_searched by one. else create new document
+    // If keyword exists update times_searched by one. else create new document
     News.findOne({ keyword: key }, (req, res) => {
       if (res) {
         News.findOneAndUpdate(
@@ -105,7 +148,7 @@ userRouter.post('/signup', (req, res) => {
         else
           res.status(201).json({
             message: {
-              msgBody: 'Account successfully createf',
+              msgBody: 'Account successfully created',
               msgError: false,
             },
           })
