@@ -10,7 +10,7 @@
 
 ### ✨ [Demo video of project](https://drive.google.com/file/d/1MwZrIF2ykMxbIy1aYI13n1e3GKCRD7Ky/view?usp=sharing)
 
-### ✨ [Website Demo (Coming Soon)]()
+### ✨ [Website Demo](https://benjambo.github.io/Newsy/#/)
 
 ## Prerequisites:
 
