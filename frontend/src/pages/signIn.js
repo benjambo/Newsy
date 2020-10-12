@@ -90,10 +90,10 @@ export class SignIn extends Component {
         .post('https://cryptic-thicket-50918.herokuapp.com/user/signin', oldUser)
         .then((res) => {
           if (res.status === 200) {
-            window.location = '/'
+            window.location = '/Newsy/#/'
             setToken(res.data.token)
           } else {
-            window.location = '#/signin'
+            window.location = '/Newsy/#/signin'
           }
           console.log(res)
         })
