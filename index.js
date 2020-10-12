@@ -14,7 +14,7 @@ const path = require("path")
 const PORT = process.env.PORT || 3001
 
 mongoose
-  .connect(url, {
+  .connect('mongodb+srv://NewsAppProjeckt:2Io1WlMQWpibF5qw@newsappdb.6ikab.mongodb.net/NewsAppDB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
