@@ -5,15 +5,11 @@ const mongoose = require('mongoose')
 const url = process.env.MONGO_URL
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
-const News = require('./models/News')
-const NewsSearch = require('./models/News')
-const User = require('./models/User')
-const Auth = require('./auth')
 
 const PORT = process.env.PORT || 3001
 
 mongoose
-  .connect(url, {
+  .connect("mongodb+srv://NewsAppProjeckt:2Io1WlMQWpibF5qw@newsappdb.6ikab.mongodb.net/NewsAppDB?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

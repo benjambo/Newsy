@@ -3,8 +3,6 @@ const userRouter = express.Router()
 const passport = require('passport')
 const JWT = require('jsonwebtoken')
 const User = require('../models/User')
-const passportConfig = require('../passport')
-const News = require('../models/News')
 
 const signToken = (userID) => {
   return JWT.sign(
