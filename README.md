@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to NewsApp 👋</h1>
+<h1 align="center">Welcome to Newsy 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/benjambo/NewsApp" target="_blank">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> NewsApp is an application for everyday usage. Read articles on what's going on in the world
+> Newsy is an application for everyday usage. Read articles on what's going on in the world
 
 ### ✨ [Demo video of project](https://drive.google.com/file/d/1MwZrIF2ykMxbIy1aYI13n1e3GKCRD7Ky/view?usp=sharing)
 
@@ -22,7 +22,7 @@
 
 # How to use:
 
-Run NewsApp from your IDE. <br />
+Run Newsy from your IDE. <br />
 Open folder frontApp and follow the instructions down below:
 
 ## Install:
