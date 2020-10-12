@@ -5,7 +5,7 @@ const NewsSearch = require('./models/News')
 
 
 // Get all news search words
-app.get('/newsSearches', (request, response) => {
+newsRouter.get('/newsSearches', (request, response) => {
   //console.log(request)
   News.find({}, (err, result) => {
     if (err) {
@@ -17,7 +17,7 @@ app.get('/newsSearches', (request, response) => {
 })
 
 // Get specific search word
-app.get('/newsSearches/:title', (request, response) => {
+newsRouter.get('/newsSearches/:title', (request, response) => {
   //console.log(request)
   const title = request.params.title;
   News.findOne({keyword: title}, (err, result) => {
