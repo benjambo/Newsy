@@ -72,8 +72,7 @@ app.use(express.static('frontend/public'))
 app.get('*', (req, res) => {
   res.sendFile('frontend/build/index.html')
 })
-
-app.get('/', (req, res) => { res.send('Hello from Express!')
+app.get('/', (req, res) => { res.send('Hello from Express!')})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
