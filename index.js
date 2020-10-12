@@ -68,13 +68,17 @@ app.post('/api/newsSearch', (request, response) => {
   }
 })
 
-app.use(express.static(path.join(__dirname, "frontend", "build")))
+/*app.use(express.static(path.join(__dirname, "frontend", "build")))
 app.use(express.static(path.join(__dirname, "frontend", "public")))
 
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
-});
+});*/
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', function (req, res) {
+  res.send('hello world')
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
