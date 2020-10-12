@@ -302,6 +302,7 @@ export const NewsIdle = () => {
           <List.Item style={{ padding: 30 }} key={article.title}>
             <Grid>
               <Grid.Column
+                only="computer"
                 width={11}
                 style={{
                   display: 'flex',
@@ -320,8 +321,30 @@ export const NewsIdle = () => {
                   <List.Item>{article.publishedAt.split('T')[0]}</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column width={5}>
+              <Grid.Column width={5} only="computer">
                 <Image src={article.urlToImage} />
+              </Grid.Column>
+              <Grid.Column
+                width={16}
+                only="mobile tablet"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-start',
+                }}
+              >
+                <Header as="h3">{article.title}</Header>
+                <List.Description style={{ margin: '20px 0' }}>
+                  {article.description}
+                </List.Description>
+                <List bulleted horizontal>
+                  <List.Item>
+                    <a href={article.url} target="_blank" rel="noopener noreferrer">
+                    {article.source.name}
+                    </a>
+                  </List.Item>
+                <List.Item>{article.publishedAt.split('T')[0]}</List.Item>
+              </List>
               </Grid.Column>
             </Grid>
           </List.Item>
