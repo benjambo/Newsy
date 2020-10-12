@@ -43,7 +43,7 @@ npm start      #For scripts start
 
 ## Usage:
 
-### Show News in JSON
+### Get searched words in JSON
 
 - URL
 
@@ -65,7 +65,7 @@ npm start      #For scripts start
   id={String} Keyword ID
 ```
 
-### Show News in JSON
+### Get searched word by word in JSON
 
 - URL
 
