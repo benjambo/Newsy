@@ -63,3 +63,5 @@ newsRouter.post('/newsSearch', (request, response) => {
     })
   }
 })
+
+module.exports = newsRouter
