@@ -1,7 +1,7 @@
 const express = require('express')
 const newsRouter = express.Router()
 const News = require('../models/News')
-const NewsSearch = require('./models/News')
+const NewsSearch = require('../models/News')
 
 
 // Get all news search words

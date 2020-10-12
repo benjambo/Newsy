@@ -65,6 +65,28 @@ npm start      #For scripts start
   id={String} Keyword ID
 ```
 
+- Response
+
+```sh
+  [
+    {
+        "keyword": "covid",
+        "times_searched": 1,
+        "id": "5f7cbd616aa57a39442d1fb3"
+    },
+    {
+        "keyword": "kissa",
+        "times_searched": 5,
+        "id": "5f7cbffc3a4e6442245afb99"
+    },
+    {
+        "keyword": "Tech",
+        "times_searched": 1,
+        "id": "5f7d822552ebe12d88cdb62c"
+    }
+  ]
+```
+
 ### Get searched word by word in JSON
 
 - URL
@@ -85,6 +107,16 @@ npm start      #For scripts start
   keyword={String, title} Searched word
   times_searched={Integer} Number of search times
   id={String} Keyword ID
+```
+
+- Response
+
+```sh
+    {
+        "keyword": "Tech",
+        "times_searched": 1,
+        "id": "5f7d822552ebe12d88cdb62c"
+    }
 ```
 
 ### News Search POST Request:
