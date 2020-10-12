@@ -39,11 +39,11 @@ npm start      #For scripts start
 
 # Rest API
 
-Use of the RestAPI
+#### Use of the RestAPI
 
 ## Usage:
 
-Show News in JSON
+### Show News in JSON
 
 - URL
 
@@ -60,17 +60,17 @@ Show News in JSON
 - URL parameters
 
 ```sh
-  keyword={String} Searched words
+  keyword={String} Searched word
   times_searched={Integer} Number of search times for the word
   id={String} Keyword ID
 ```
 
-Show News in JSON
+### Show News in JSON
 
 - URL
 
 ```sh
-  /api/newsSearch
+  /api/newsSearches/:title
 ```
 
 - Method
@@ -82,12 +82,12 @@ Show News in JSON
 - URL parameters
 
 ```sh
-  keyword={String} Searched words
-  times_searched={Integer} Number of search times for the word
+  keyword={String, title} Searched word
+  times_searched={Integer} Number of search times
   id={String} Keyword ID
 ```
 
-News Search:
+### News Search POST Request:
 
 ```sh
 app.post('/api/newsSearch', (request, response) => {
@@ -124,7 +124,7 @@ app.post('/api/newsSearch', (request, response) => {
 })
 ```
 
-User Details:
+### User Details POST Request:
 
 ```sh
 userRouter.post('/signup', (req, res) => {
