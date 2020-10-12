@@ -67,12 +67,17 @@ app.post('/api/newsSearch', (request, response) => {
   }
 })
 
-app.use(express.static('frontend/build'))
-app.use(express.static('frontend/public'))
-app.get('*', (req, res) => {
-  res.sendFile('frontend/build/index.html')
-})
-app.get('/', (req, res) => { res.send('Hello from Express!')})
+// ... other imports 
+const path = require("path")
+
+// ... other app.use middleware 
+app.use(express.static(path.join(__dirname, "frontend", "build")))
+
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
