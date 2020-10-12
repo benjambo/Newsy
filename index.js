@@ -9,6 +9,7 @@ const News = require('./models/News')
 const NewsSearch = require('./models/News')
 const User = require('./models/User')
 const Auth = require('./auth')
+const path = require("path")
 
 const PORT = process.env.PORT || 3001
 
@@ -67,13 +68,9 @@ app.post('/api/newsSearch', (request, response) => {
   }
 })
 
-// ... other imports 
-const path = require("path")
-
-// ... other app.use middleware 
 app.use(express.static(path.join(__dirname, "frontend", "build")))
+app.use(express.static(path.join(__dirname, "frontend", "public")))
 
-// ...
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
