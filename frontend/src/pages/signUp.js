@@ -103,12 +103,12 @@ export class SignUp extends Component {
       }
 
       axios
-        .post('http://localhost:3001/user/signup', newUser)
+        .post('https://cryptic-thicket-50918.herokuapp.com/user/signup', newUser)
         .then((res) => {
           if (res.status === 201) {
-            window.location = '#/signin'
+            window.location = '/Newsy/#/signin'
           } else {
-            window.location = '#/signup'
+            window.location = '/Newsy/#/signup'
           }
           console.log(res)
         })

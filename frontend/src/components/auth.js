@@ -4,12 +4,14 @@ import jwt from 'jsonwebtoken'
 export function isLoggedIn() {
   const token = localStorage.getItem('token')
   return token != null
+  
 }
 
 export function logout() {
   if (isLoggedIn()) {
     //localStorage.clear();
     localStorage.removeItem('token')
+    window.location.reload(true);
   }
 }
 

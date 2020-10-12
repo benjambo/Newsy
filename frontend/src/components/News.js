@@ -19,7 +19,7 @@ class News extends React.Component {
   searchForTopic = async (topic) => {
     const token = auth.getToken();
     axios
-      .post('http://localhost:3001/api/newsSearch', { topic, token })
+      .post('https://cryptic-thicket-50918.herokuapp.com/api/newsSearch', { topic, token })
       .then((res) => console.log(res))
     
 

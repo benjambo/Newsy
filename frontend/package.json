@@ -57,5 +57,5 @@
   "devDependencies": {
     "gh-pages": "^3.1.0"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "https://cryptic-thicket-50918.herokuapp.com/"
 }

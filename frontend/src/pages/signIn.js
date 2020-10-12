@@ -92,6 +92,7 @@ export class SignIn extends Component {
           if (res.status === 200) {
             window.location = '/Newsy/#/'
             setToken(res.data.token)
+            window.location.reload(true);
           } else {
             window.location = '/Newsy/#/signin'
           }

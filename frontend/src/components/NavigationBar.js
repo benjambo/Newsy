@@ -24,7 +24,7 @@ const NavigationBar = () => {
               <Nav.Link href="#/signin">Sign In</Nav.Link>
             ) : null}
             {auth.isLoggedIn() ? (
-              <Nav.Link href="/" onClick={auth.logout}>
+              <Nav.Link onClick={auth.logout}>
                 Logout
               </Nav.Link>
             ) : null}
