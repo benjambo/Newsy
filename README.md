@@ -226,7 +226,7 @@ userRouter.get(
 
 ## Author:
 
-👤 **Benjamin Bowo, Jere Saarelma**
+👤 **Benjamin Schelling, Jere Saarelma**
 
 - Github: [@benjambo](https://github.com/benjambo)
 - Github: [@jepu32](https://github.com/jepu32)
