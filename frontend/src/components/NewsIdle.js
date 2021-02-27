@@ -9,6 +9,7 @@ import {
   List,
 } from 'semantic-ui-react'
 //import articleList from '../articleList.json'
+import { FadeInSection } from './FadeInSection'
 
 import * as auth from './auth'
 
@@ -299,6 +300,7 @@ export const NewsIdle = () => {
           articleName.title.toLowerCase().includes(searchNews.toLowerCase())
         )
         .map((article) => (
+          <FadeInSection>
           <List.Item style={{ padding: 30 }} key={article.title}>
             <Grid>
               <Grid.Column
@@ -348,6 +350,7 @@ export const NewsIdle = () => {
               </Grid.Column>
             </Grid>
           </List.Item>
+          </FadeInSection>
         ))
     return <div>{mapNews()}</div>
   }
